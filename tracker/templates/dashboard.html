@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+    <link rel="shortcut icon" href="{% static '/photo/logo.png' %}" type="image/x-icon">
+    <title>Sendbox International And Local Courier Service</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/static/photo/sendbox-logo.svg" alt="">
+        </div>
+        <div class="form_group">
+            <form action="{% url 'parcel_details' %}" method="get">
+                <input type="text" name="track_id" id="input" placeholder="track another parcel">
+                <button type="submit">track</button>
+            </form>
+        </div>
+    </nav>
+    <section>
+        {% for result in object_list %}
+        <div class="box">
+            <div class="title">
+                <span class="one">
+                    <p>order id:    </p><strong>{{result.order_id}}</strong>
+                </span>
+                <span class="two">
+                    <p>order time:  </p><strong>{{result.order_time}}</strong>
+                </span>
+            </div>
+
+            <div class="details">
+                <div class="image">
+                    <img src="{{result.order_image.url}}" alt="image of your package">
+                </div>
+                <div class="item_details">
+                    <strong>{{result.content}}</strong> <br>
+                    <p>to be recived by: <strong>{{result.reciver_name}}</strong></p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span class="three">
+                    <p>quantity:</p> <strong>{{result.quantity}}</strong>
+                    <p>parcel weight:</p> <strong>{{result.weight}}</strong>
+                </span>
+            </div>
+            <div class="tracking">
+                <p>{{result.status}}</p>
+            </div>
+            <div class="who">
+                <strong>{{result.message}}</strong>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

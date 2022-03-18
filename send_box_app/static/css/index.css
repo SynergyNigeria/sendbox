@@ -1,0 +1,305 @@
+:root{
+    --blue:#007bff;
+    --indigo:#6610f2;
+    --purple:#6f42c1;
+    --pink:#e83e8c;
+    --red:#dc3545;
+    --orange:#fd7e14;
+    --yellow:#ffc107;
+    --green:#28a745;
+    --teal:#20c997;
+    --cyan:#17a2b8;
+    --white:#fff;
+    --gray:#6c757d;
+    --gray-dark:#343a40;
+    --primary:#007bff;
+    --secondary:#6c757d;
+    --success:#28a745;
+    --info:#17a2b8;
+    --warning:#ffc107;
+    --danger:#dc3545;
+    --light:#f8f9fa;
+    --dark:#343a40;
+    --breakpoint-xs:0;
+    --breakpoint-sm:576px;
+    --breakpoint-md:768px;
+    --breakpoint-lg:992px;
+    --breakpoint-xl:1200px;
+    --font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+*, ::after, ::before{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-size: 10px;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--font-family-sans-serif);
+    color: var(--gray-dark);
+}
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;line-height:1.15;
+    /* font-family: Nunito; */
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -ms-overflow-style:scrollbar;
+    -webkit-tap-highlight-color:transparent;
+}
+body{
+    min-width: 100vw;
+    height: 100vh;
+    display: block;
+    background: var(--light);
+    scroll-behavior: smooth;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
+nav{
+    height: 70px;
+    width: 100%;
+    background-color: var(--light);
+    display: flex;
+    justify-content: space-evenly;
+}
+nav .logo{
+    height: 100%;
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo img{
+    height: 50%;
+    width: auto;
+}
+.form_group{
+    height: 100%;
+    flex: 0 0 40%;
+}
+.form_group form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+form input{
+    width: 50%;
+    height: 40px;
+    border: none;
+    padding-left: 5px;
+}
+form button{
+    width: 30%;
+    height: 40px;
+    background-color: var(--danger);
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 150%;
+    font-weight: 700;
+}
+form button:hover{
+    background: #fa4343;
+}
+section{
+    height: calc(100% - 70px);
+    width: 80%;
+    margin: 0 auto;
+    background:  linear-gradient(var(--light), #f5f5f5ce), url(/static/photo/homepage.svg);
+    /* position: relative; */
+    display: flex;
+}
+.right{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    width: 100%;
+    margin: 20px 0;
+}
+h1{
+    font-size: 500%;
+    text-align: justify;
+    color: var(--success);
+    font-family: Nunito;
+    width: 90%;
+}
+h2{
+    font-size: 200%;
+    font-weight: 400;
+    text-align: center;
+    color: var(--gray);
+    width: 70%;
+}
+.left{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left_in{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid #6610f2; */
+    position: relative;
+    background: linear-gradient(var(--light),  var(--light),#f5f5f5ce);
+}
+.i1, .i2, .i3, .i4, .i5{
+    height: 70px;
+    width: auto;
+    position: absolute;
+    display: block;
+}
+.i1{
+    top: 5%;
+    left: 5%;
+}
+.i2{
+    top: 10%;
+    left: 70%;
+}
+.i3{
+    top: 30%;
+    left: 20%;
+}
+.i4{
+    top: 15%;
+    left: 40%;
+}
+.i5{
+    top: 30%;
+    left: 50%;
+}
+.left_in .text{
+    position: absolute;
+    bottom: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left_in .text strong{
+    font-size: 250%;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+.left_in .text small{
+    font-size: 150%;
+}
+
+@media only screen and (max-width: 1024px){
+    
+    section{
+        width: 100%;
+    }
+    h1{
+        font-size: 350%;
+        text-align: center;
+        color: var(--success);
+        font-family: Nunito;
+        width: 98%;
+    }
+
+}
+
+@media only screen and (max-width: 800px){
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+    .right {
+        position: unset;
+        display: flex;
+        width: 100%;
+        height: 50%;
+        
+    }
+    .left{
+        position: unset;
+        display: flex;
+        width: 100%;
+        height: 50%;
+    }
+    .text2{
+        display: flex;
+        justify-content: center;
+    }
+    h2{
+        width: 90%;
+    }
+    .left_in .text{
+        bottom: 25%;
+        width: 90%;
+    }
+    .left_in .text strong{
+        width: 90%;
+        text-align: center;
+    }
+    
+    .left_in .text small{
+        font-size: 150%;
+        width: 90%;
+        text-align: center;
+        margin-bottom: -40px;
+    }
+
+}
+
+@media only screen and (max-width: 700px){
+    nav{
+        align-items: center;
+    }
+    nav .logo{
+        height: 70%;
+        flex: 0 0 30%;
+    
+    }
+    .logo img{
+        height: 30%;
+        width: auto;
+    }
+    .form_group{
+        height: 70%;
+        flex: 0 0 65%;
+    }
+    h1{
+        font-size: 300%;
+        width: 100%;
+    }
+    h2{
+        font-size: 150%;
+    }
+    .i1, .i2, .i3, .i4, .i5{
+        height: 50px;
+    }
+    .left_in .text strong{
+        font-size: 200%;
+    }.left_in .text small{
+        font-size: 120%;
+        width: 100%;
+        /* text-align: justify; */
+    }
+    .left_in .text{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    .right .text{
+        width: 100%;
+    }
+}

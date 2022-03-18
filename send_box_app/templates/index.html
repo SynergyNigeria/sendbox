@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+    <link rel="shortcut icon" href="{% static '/photo/logo.png' %}" type="image/x-icon">
+    <title>Sendbox International And Local Courier Service</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/static/photo/sendbox-logo.svg" alt="">
+        </div>
+        <div class="form_group">
+            <form action="{% url 'parcel_details' %}" method="get">
+                <input type="text" name="track_id" id="input" placeholder="enter tracking number here">
+                <button type="submit">track</button>
+            </form>
+        </div>
+    </nav>
+    <section>
+        <div class="right">
+            <div class="text text1">
+                <h1>Deliveries for e-commerce and social commerce sellers</h1>
+            </div>
+            <div class="text text2">
+                <h2>We help you with local and international deliveries to your customers anywhere in the world.</h2>
+            </div>
+        </div>
+        
+        <div class="left">
+            <div class="left_in">
+                <img src="/static/photo/canada.svg" alt="" class="i1">
+                <img src="/static/photo/france.svg" alt="" class="i2">
+                <img src="/static/photo/germany.svg" alt="" class="i3">
+                <img src="/static/photo/united-kingdom.svg" alt="" class="i4">
+                <img src="/static/photo/united-states-of-america.svg" alt="" class="i5">
+
+                <div class="text">
+                    <strong>Local & International shipping for personal and business use</strong>
+                    <small>Request a pickup or delivery from you or from the seller and we'll get it delivered to where you need it to go.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
